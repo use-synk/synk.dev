@@ -33,18 +33,6 @@ export function WaitlistConfirmationEmail({
 
 	return (
 		<Html>
-			<Head>
-				<Font
-					fallbackFontFamily="Georgia"
-					fontFamily="Instrument Serif"
-					fontStyle="normal"
-					fontWeight={400}
-					webFont={{
-						url: "https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-2zI.ttf",
-						format: "truetype",
-					}}
-				/>
-			</Head>
 			<Preview>
 				Thanks for signing up to the Synk waitlist! We'll be in touch soon.
 			</Preview>
@@ -59,12 +47,24 @@ export function WaitlistConfirmationEmail({
 					},
 				}}
 			>
+				<Head>
+					<Font
+						fallbackFontFamily="Georgia"
+						fontFamily="Instrument Serif"
+						fontStyle="normal"
+						fontWeight={400}
+						webFont={{
+							url: "https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-2zI.ttf",
+							format: "truetype",
+						}}
+					/>
+				</Head>
 				<Body className="bg-stone-100 py-8 font-sans">
 					<Container className="bg-white p-8">
 						<Img
-							alt="Synk"
+							alt="Synk Logo"
 							height={24}
-							src={`${baseUrl}/email/logo-dark.png`}
+							src={`${baseUrl}/email/logo-lime.png`}
 							width={80}
 						/>
 						<Heading className="mt-12 font-normal font-serif text-3xl">
