@@ -27,7 +27,7 @@ export async function joinWaitlist(email: string): Promise<SignupResult> {
 	}
 
 	const { error } = await resend.emails.send({
-		from: "Synk <hello@synk.dev>",
+		from: "Synk <no-reply@waitlist.use-synk.com>",
 		to: [email],
 		subject: "You're on the waitlist!",
 		react: WaitlistConfirmationEmail({ email }),
