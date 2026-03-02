@@ -2,8 +2,8 @@
 
 import { db } from "@/db";
 import { waitlistSignups } from "@/db/schema";
-import { resend } from "@/lib/resend";
 import { WaitlistConfirmationEmail } from "@/emails/waitlist-confirmation";
+import { resend } from "@/lib/resend";
 
 type SignupResult =
 	| { success: true }
@@ -31,7 +31,6 @@ export async function joinWaitlist(email: string): Promise<SignupResult> {
 		to: [email],
 		subject: "You're on the waitlist!",
 		react: WaitlistConfirmationEmail({ email }),
-		idempotencyKey: `waitlist-confirmation/${email}`,
 	});
 
 	if (error) {
