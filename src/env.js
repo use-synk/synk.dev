@@ -10,6 +10,7 @@ export const env = createEnv({
 		NODE_ENV: z.enum(["development", "test", "production"]),
 		DATABASE_URL: z.url(),
 		RESEND_API_KEY: z.string(),
+		UNSUBSCRIBE_SECRET: z.string().min(32),
 	},
 
 	/**
@@ -30,6 +31,7 @@ export const env = createEnv({
 		NODE_ENV: process.env.NODE_ENV,
 		DATABASE_URL: process.env.DATABASE_URL,
 		RESEND_API_KEY: process.env.RESEND_API_KEY,
+		UNSUBSCRIBE_SECRET: process.env.UNSUBSCRIBE_SECRET,
 		NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
 		// NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 	},

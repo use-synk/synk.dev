@@ -9,7 +9,8 @@ export const siteMetadata = {
 	title: "Synk — AI-Native Documentation That Stays in Sync",
 	description:
 		"Synk is an open-source tool that uses AI to generate documentation from your codebase and keep it updated automatically. Self-host for free, or use our hosted version.",
-	shortDescription: "Docs that write themselves—and stay in sync with your code.",
+	shortDescription:
+		"Docs that write themselves—and stay in sync with your code.",
 	keywords: [
 		"documentation",
 		"AI documentation",
@@ -38,5 +39,6 @@ export const siteConfig = {
 		about: "/about",
 		termsOfService: "/legal/tos",
 		privacyPolicy: "/legal/privacy",
+		unsubscribe: "/unsubscribe",
 	},
 } as const;

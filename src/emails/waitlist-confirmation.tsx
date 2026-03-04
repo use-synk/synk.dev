@@ -13,7 +13,9 @@ import {
 	Tailwind,
 	Text,
 } from "@react-email/components";
+import { env } from "@/env";
 import { getBaseUrl, siteConfig } from "@/lib/config";
+import { getUnsubscribeUrl } from "@/lib/unsubscribe";
 
 const footerLinks = [
 	{ label: "Home", href: siteConfig.routes.home },
@@ -22,8 +24,19 @@ const footerLinks = [
 	{ label: "GitHub", href: siteConfig.projectRepo.url },
 ];
 
-export function WaitlistConfirmationEmail() {
+type WaitlistConfirmationEmailProps = {
+	email: string;
+};
+
+export function WaitlistConfirmationEmail({
+	email,
+}: WaitlistConfirmationEmailProps) {
 	const baseUrl = getBaseUrl();
+	const unsubscribeUrl = getUnsubscribeUrl(
+		email,
+		env.UNSUBSCRIBE_SECRET,
+		baseUrl,
+	);
 
 	return (
 		<Html>
@@ -95,15 +108,19 @@ export function WaitlistConfirmationEmail() {
 							))}
 						</Row>
 						<Text className="font-sans text-stone-500 text-xs">
-							You receive this email because you signed up to the Synk waitlist. If you
-							did not request this email, please contact us at{" "}
+							You receive this email because you signed up to the Synk waitlist.{" "}
+							<Link className="font-sans text-lime-500" href={unsubscribeUrl}>
+								Unsubscribe
+							</Link>{" "}
+							from these emails at any time. If you did not request this email, please
+							contact us at{" "}
 							<Link
 								className="font-sans text-lime-500"
 								href="mailto:hello@use-synk.com"
 							>
 								hello@use-synk.com
 							</Link>
-							. You can unsubscribe from these emails at any time. Please see our{" "}
+							. See our{" "}
 							<Link
 								className="font-sans text-lime-500"
 								href={
@@ -114,14 +131,7 @@ export function WaitlistConfirmationEmail() {
 							>
 								privacy policy
 							</Link>{" "}
-							for more information or contact us directly at{" "}
-							<Link
-								className="font-sans text-lime-500"
-								href="mailto:hello@use-synk.com"
-							>
-								hello@use-synk.com
-							</Link>
-							.
+							for more information.
 						</Text>
 					</Container>
 				</Body>
@@ -132,4 +142,6 @@ export function WaitlistConfirmationEmail() {
 
 export default WaitlistConfirmationEmail;
 
-WaitlistConfirmationEmail.PreviewProps = {};
+WaitlistConfirmationEmail.PreviewProps = {
+	email: "preview@example.com",
+} satisfies WaitlistConfirmationEmailProps;

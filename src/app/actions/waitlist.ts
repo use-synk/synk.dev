@@ -30,7 +30,7 @@ export async function joinWaitlist(email: string): Promise<SignupResult> {
 		from: "Synk <no-reply@waitlist.use-synk.com>",
 		to: [email],
 		subject: "You're on the waitlist!",
-		react: WaitlistConfirmationEmail(),
+		react: WaitlistConfirmationEmail({ email }),
 	});
 
 	if (error) {

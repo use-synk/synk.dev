@@ -99,6 +99,7 @@ cp .env.example .env
 |---|---|---|
 | `DATABASE_URL` | Yes | PostgreSQL connection string (e.g. from Neon) |
 | `RESEND_API_KEY` | Yes | API key from your Resend account |
+| `UNSUBSCRIBE_SECRET` | Yes | Secret for signing unsubscribe links (min. 32 characters) |
 | `NEXT_PUBLIC_SITE_URL` | No | Production URL (defaults to `http://localhost:3000`) |
 
 ### 4. Set up the database
