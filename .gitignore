@@ -45,3 +45,9 @@ bun-debug.log*
 
 # idea files
 .idea
+ai/ROLE_ARCHITECT.md
+ai/ROLE_DOCS.md
+ai/ROLE_FEATURE.md
+ai/ROLE_REFACTOR.md
+ai/ROLE_REVIEW.md
+ai/RULES.md
