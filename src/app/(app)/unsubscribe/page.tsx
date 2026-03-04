@@ -92,15 +92,19 @@ export default async function UnsubscribePage({
 		);
 	}
 
+	const isAlreadyWithdrawn = result.status === "already_withdrawn";
+
 	return (
 		<>
 			<main className="mx-auto w-full max-w-6xl border-stone-200 border-x border-dashed px-8 py-32">
 				<h1 className="font-medium font-serif text-3xl text-stone-800">
-					You&apos;ve been unsubscribed
+					{isAlreadyWithdrawn
+						? "You're already unsubscribed"
+						: "You've been unsubscribed"}
 				</h1>
 				<p className="mt-4 text-stone-600">
-					{result.status === "already_withdrawn"
-						? "You were already unsubscribed from our waitlist emails."
+					{isAlreadyWithdrawn
+						? "You were already removed from our waitlist. No further action needed."
 						: "You have been removed from the Synk waitlist. You will no longer receive emails from us."}
 				</p>
 				<Link
