@@ -7,9 +7,9 @@ const redis = new Redis({
 	token: env.UPSTASH_REDIS_REST_TOKEN,
 });
 
-/** Sliding window: 5 requests per 60 seconds per identifier (e.g. IP) */
+/** Sliding window: 2 requests per 60 seconds per identifier (e.g. IP) */
 export const waitlistRatelimit = new Ratelimit({
 	redis,
-	limiter: Ratelimit.slidingWindow(5, "60 s"),
+	limiter: Ratelimit.slidingWindow(2, "60 s"),
 	prefix: "ratelimit:waitlist",
 });
