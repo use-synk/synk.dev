@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import "@/styles/globals.css";
 
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter } from "next/font/google";
 
@@ -40,8 +41,16 @@ export const metadata: Metadata = {
 	},
 	icons: {
 		icon: [
-			{ rel: "icon", url: "/icon-light.svg", media: "(prefers-color-scheme: dark)" },
-			{ rel: "icon", url: "/icon-dark.svg", media: "(prefers-color-scheme: light)" },
+			{
+				rel: "icon",
+				url: "/icon-light.svg",
+				media: "(prefers-color-scheme: dark)",
+			},
+			{
+				rel: "icon",
+				url: "/icon-dark.svg",
+				media: "(prefers-color-scheme: light)",
+			},
 		],
 	},
 	robots: {
@@ -76,7 +85,8 @@ export default function RootLayout({
 		<html className={`${inter.variable} ${instrument.variable}`} lang="en">
 			<body>
 				{children}
-				<Toaster richColors />
+				<Toaster className="dark" richColors />
+				<Analytics />
 			</body>
 		</html>
 	);
