@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import "@/styles/globals.css";
 
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter } from "next/font/google";
 
@@ -87,6 +88,7 @@ export default function RootLayout({
 				{children}
 				<Toaster className="dark" richColors />
 				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
