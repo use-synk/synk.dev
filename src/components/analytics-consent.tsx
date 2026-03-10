@@ -36,7 +36,7 @@ export function AnalyticsConsent() {
 				</>
 			) : null}
 			{consent === "unknown" ? (
-				<div className="fixed right-4 bottom-4 z-50 w-full max-w-sm rounded-xl border border-stone-200 bg-white p-4 shadow-lg dark:border-stone-700 dark:bg-stone-900">
+				<div className="fixed right-4 bottom-4 z-50 w-full max-w-[calc(100%-2rem)] rounded-xl border border-stone-200 bg-white p-4 shadow-lg sm:max-w-sm dark:border-stone-700 dark:bg-stone-900">
 					<p className="text-sm text-stone-700 dark:text-stone-200">
 						We use privacy-friendly analytics and performance telemetry to improve the
 						website. You can accept or decline optional analytics.

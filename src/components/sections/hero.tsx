@@ -1,6 +1,6 @@
 import { CircleDashed } from "lucide-react";
 import Image from "next/image";
-import AppScreenshot from "public/app-screenshot.png";
+import AppScreenshot from "public/app-screenshot-2.png";
 import type React from "react";
 import { cn } from "@/lib/utils";
 import { JoinWaitlist } from "../join-waitlist";
