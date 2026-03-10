@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter } from "next/font/google";
-
+import { Providers } from "@/components/providers";
 import { getBaseUrl, siteMetadata } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -83,10 +83,16 @@ export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html className={`${inter.variable} ${instrument.variable}`} lang="en">
+		<html
+			className={`${inter.variable} ${instrument.variable}`}
+			lang="en"
+			suppressHydrationWarning
+		>
 			<body>
-				{children}
-				<Toaster className="dark" richColors />
+				<Providers>
+					{children}
+					<Toaster className="dark" richColors />
+				</Providers>
 				<Analytics />
 				<SpeedInsights />
 			</body>

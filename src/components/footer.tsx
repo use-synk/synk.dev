@@ -9,13 +9,13 @@ export function Footer({
 	return (
 		<footer
 			className={cn(
-				"border-stone-200 border-t border-dashed px-8 py-12",
+				"border-stone-200 border-t border-dashed px-8 py-12 dark:border-stone-700",
 				className,
 			)}
 			{...props}
 		>
 			<div className="mx-auto w-full max-w-6xl px-8">
-				<div className="flex flex-wrap items-center justify-center gap-6 font-medium text-sm text-stone-700">
+				<div className="flex flex-wrap items-center justify-center gap-6 font-medium text-sm text-stone-700 dark:text-stone-300">
 					<Link href={siteConfig.routes.home}>Home</Link>
 					<Link href={siteConfig.routes.about}>About</Link>
 					<Link href={siteConfig.routes.termsOfService}>Terms of Service</Link>
@@ -24,7 +24,7 @@ export function Footer({
 						GitHub
 					</Link>
 				</div>
-				<p className="mt-6 w-full text-center text-stone-500 text-xs">
+				<p className="mt-6 w-full text-center text-stone-500 text-xs dark:text-stone-400">
 					&copy; {new Date().getFullYear()} Synk. All rights reserved.
 				</p>
 			</div>

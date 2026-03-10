@@ -67,6 +67,7 @@ export function JoinWaitlist({
 									className={cn(
 										"flex h-8 items-center justify-center rounded-md bg-background px-3 text-sm text-stone-800 shadow-xs ring-1 ring-stone-700/10 placeholder:text-stone-500 sm:h-7",
 										"focus-visible:outline-none focus-visible:ring-lime-500 disabled:opacity-70 aria-invalid:border aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20",
+										"dark:text-stone-50 dark:ring-stone-50/20 dark:placeholder:text-stone-400",
 									)}
 									disabled={submitState === "success"}
 									onBlur={field.handleBlur}
@@ -93,7 +94,7 @@ export function JoinWaitlist({
 					)}
 				</form.Subscribe>
 			</FieldGroup>
-			<FieldDescription className="mt-4! max-w-xs text-stone-500 text-xs">
+			<FieldDescription className="mt-4! max-w-xs text-stone-500 text-xs dark:text-stone-400">
 				By submitting this form, you agree to our{" "}
 				<Link href={siteConfig.routes.privacyPolicy}>privacy policy</Link> and{" "}
 				<Link href={siteConfig.routes.termsOfService}>terms of service</Link>.

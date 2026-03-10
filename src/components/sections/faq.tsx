@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { M } from "node_modules/@upstash/redis/zmscore-DcU8fVDf.mjs";
 import {
 	Collapsible,
@@ -61,32 +62,47 @@ export async function FAQSection({
 }: React.ComponentProps<"section">) {
 	return (
 		<section {...props}>
-			<div className="mx-auto grid w-full max-w-6xl gap-8 px-8 py-32 md:grid-cols-2">
-				<div className="pt-2">
-					<h2 className="font-serif text-4xl">Frequently asked questions</h2>
-					<p className="mt-4 max-w-xl text-sm text-stone-500">
-						We've received a lot of questions from our waitlist. This section is our
-						attempt to answer some of the most frequently asked ones.
-					</p>
-				</div>
-				<div>
-					{faqs.map((faq) => (
-						<Collapsible
-							className={"border-stone-200 border-b last:border-b-0"}
-							key={faq.id}
-						>
-							<CollapsibleTrigger
-								className={"w-full justify-start py-4 text-start text-sm"}
+			<div className="mx-auto w-full max-w-6xl px-8 py-32">
+				<h2 className="font-serif text-4xl">Frequently asked questions</h2>
+				<div className="grid gap-8 md:grid-cols-2">
+					<div>
+						<p className="mt-4 max-w-xl text-sm text-stone-500 dark:text-stone-400">
+							We've received a lot of questions from our waitlist. This section is our
+							attempt to answer some of the most frequently asked ones.
+						</p>
+						<span className="mt-6 block text-sm text-stone-500 dark:text-stone-400">
+							Question not answered?{" "}
+							<Link
+								className="font-medium text-lime-500 dark:text-lime-400"
+								href={"mailto:hello@mail.use-synk.com"}
 							>
-								<h3 className="font-medium text-stone-800">{faq.question}</h3>
-							</CollapsibleTrigger>
-							<CollapsibleContent className={"pb-8"}>
-								<p className="max-w-prose whitespace-pre-line text-sm text-stone-500">
-									{faq.answer}
-								</p>
-							</CollapsibleContent>
-						</Collapsible>
-					))}
+								Get in touch
+							</Link>
+						</span>
+					</div>
+					<div className="">
+						{faqs.map((faq) => (
+							<Collapsible
+								className={
+									"border-stone-200 border-b last:border-b-0 dark:border-stone-700"
+								}
+								key={faq.id}
+							>
+								<CollapsibleTrigger
+									className={"w-full justify-start py-4 text-start text-sm"}
+								>
+									<h3 className="font-medium text-stone-800 dark:text-stone-100">
+										{faq.question}
+									</h3>
+								</CollapsibleTrigger>
+								<CollapsibleContent className={"pb-8"}>
+									<p className="max-w-prose whitespace-pre-line text-sm text-stone-500 dark:text-stone-400">
+										{faq.answer}
+									</p>
+								</CollapsibleContent>
+							</Collapsible>
+						))}
+					</div>
 				</div>
 			</div>
 		</section>

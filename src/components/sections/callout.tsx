@@ -10,9 +10,9 @@ export async function CalloutSection({
 	return (
 		<section {...props}>
 			<div className="mx-auto w-full max-w-6xl px-8 py-32">
-				<div className="mx-auto max-w-2xl rounded-t-xl bg-linear-to-b from-stone-100 to-transparent p-6 sm:p-12">
+				<div className="mx-auto max-w-2xl rounded-t-xl bg-linear-to-b from-stone-100 to-transparent p-6 sm:p-12 dark:from-stone-800 dark:to-transparent">
 					<h2 className="font-serif text-4xl">Get early access</h2>
-					<p className="mt-2 text-sm text-stone-500">
+					<p className="mt-2 text-sm text-stone-500 dark:text-stone-400">
 						Be the first to try Synk when we launch. We'll notify you – no spam.
 					</p>
 					<JoinWaitlist className="mt-8" />
@@ -32,9 +32,11 @@ export async function CalloutSection({
 								<AvatarFallback>OM</AvatarFallback>
 							</Avatar>
 						</AvatarGroup>
-						<p className="text-sm text-stone-500">
-							<span className="font-medium text-stone-700">150+</span> developers are
-							already on the list
+						<p className="text-sm text-stone-500 dark:text-stone-400">
+							<span className="font-medium text-stone-700 dark:text-stone-50">
+								150+
+							</span>{" "}
+							developers are already on the list
 						</p>
 					</div>
 				</div>
