@@ -52,7 +52,7 @@ export default async function UnsubscribePage({
 					<p className="mt-4 text-stone-600">
 						This link is invalid or has expired. If you want to unsubscribe, please
 						use the link in one of our recent emails, or contact us at{" "}
-						<span className="text-lime-600">legal@use-synk.com</span>.
+						<span className="text-lime-600">legal@mail.use-synk.com</span>.
 					</p>
 					<Link
 						className="mt-8 inline-block font-medium text-lime-600 text-sm hover:text-lime-700"
@@ -78,7 +78,7 @@ export default async function UnsubscribePage({
 					<p className="mt-4 text-stone-600">
 						This link is invalid or has expired. Please use the link in one of our
 						recent emails, or contact us at{" "}
-						<span className="text-lime-600">legal@use-synk.com</span>.
+						<span className="text-lime-600">legal@mail.use-synk.com</span>.
 					</p>
 					<Link
 						className="mt-8 inline-block font-medium text-lime-600 text-sm hover:text-lime-700"

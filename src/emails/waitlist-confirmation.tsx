@@ -16,6 +16,7 @@ import {
 import { env } from "@/env";
 import { getBaseUrl, siteConfig } from "@/lib/config";
 import { getUnsubscribeUrl } from "@/lib/unsubscribe";
+import { getWaitlistConfirmationUrl } from "@/lib/waitlist-confirmation";
 
 const footerLinks = [
 	{ label: "Home", href: siteConfig.routes.home },
@@ -32,6 +33,11 @@ export function WaitlistConfirmationEmail({
 	email,
 }: WaitlistConfirmationEmailProps) {
 	const baseUrl = getBaseUrl();
+	const confirmUrl = getWaitlistConfirmationUrl(
+		email,
+		env.UNSUBSCRIBE_SECRET,
+		baseUrl,
+	);
 	const unsubscribeUrl = getUnsubscribeUrl(
 		email,
 		env.UNSUBSCRIBE_SECRET,
@@ -40,9 +46,7 @@ export function WaitlistConfirmationEmail({
 
 	return (
 		<Html>
-			<Preview>
-				Thanks for signing up to the Synk waitlist! We'll be in touch soon.
-			</Preview>
+			<Preview>Confirm your email to join the Synk waitlist.</Preview>
 			<Tailwind
 				config={{
 					theme: {
@@ -75,16 +79,24 @@ export function WaitlistConfirmationEmail({
 							width={80}
 						/>
 						<Heading className="mt-12 font-normal font-serif text-3xl">
-							You're on the waitlist!
+							Confirm your waitlist signup
 						</Heading>
 						<Text className="mt-8 font-sans text-stone-700">Hey there,</Text>
 						<Text className="font-sans text-stone-700">
-							Thanks for signing up to the Synk waitlist. We are working hard to bring
-							you the first beta as soon as possible.
+							Thanks for your interest in Synk. To complete your signup, please confirm
+							your email address.
 						</Text>
 						<Text className="font-sans text-stone-700">
-							Since you've joined the waitlist, you'll be one of the first to know when
-							we launch.
+							Only after confirmation will your address be added to the waitlist and
+							used for product updates.
+						</Text>
+						<Text className="mt-6">
+							<Link
+								className="inline-block rounded-md bg-lime-500 px-4 py-2 font-medium text-lime-950 text-sm"
+								href={confirmUrl}
+							>
+								Confirm email address
+							</Link>
 						</Text>
 						<Text className="font-sans text-stone-700">
 							All the best, <br />
@@ -108,7 +120,8 @@ export function WaitlistConfirmationEmail({
 							))}
 						</Row>
 						<Text className="font-sans text-stone-500 text-xs">
-							You receive this email because you signed up to the Synk waitlist.{" "}
+							You receive this email because your email address was submitted to the
+							Synk waitlist form. If that was not you, please ignore this email.{" "}
 							<Link className="font-sans text-lime-500" href={unsubscribeUrl}>
 								Unsubscribe
 							</Link>{" "}
@@ -116,9 +129,9 @@ export function WaitlistConfirmationEmail({
 							contact us at{" "}
 							<Link
 								className="font-sans text-lime-500"
-								href="mailto:hello@mail.use-synk.com"
+								href="mailto:legal@mail.use-synk.com"
 							>
-								hello@mail.use-synk.com
+								legal@mail.use-synk.com
 							</Link>
 							. See our{" "}
 							<Link

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ResetPrivacySettings } from "@/components/reset-privacy-settings";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
@@ -20,6 +21,7 @@ export function Footer({
 					<Link href={siteConfig.routes.about}>About</Link>
 					<Link href={siteConfig.routes.termsOfService}>Terms of Service</Link>
 					<Link href={siteConfig.routes.privacyPolicy}>Privacy Policy</Link>
+					<Link href={siteConfig.routes.imprint}>Imprint</Link>
 					<Link href={siteConfig.projectRepo.url} target="_blank">
 						GitHub
 					</Link>
@@ -27,6 +29,9 @@ export function Footer({
 				<p className="mt-6 w-full text-center text-stone-500 text-xs dark:text-stone-400">
 					&copy; {new Date().getFullYear()} Synk. All rights reserved.
 				</p>
+				<div className="mt-3 flex justify-center">
+					<ResetPrivacySettings />
+				</div>
 			</div>
 		</footer>
 	);

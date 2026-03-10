@@ -1,5 +1,6 @@
 "use server";
 
+import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
 import { db } from "@/db";
 import { waitlistSignups } from "@/db/schema";
@@ -27,25 +28,24 @@ export async function joinWaitlist(email: string): Promise<SignupResult> {
 	if (!allowed) return { success: false, error: "rate_limited" };
 
 	try {
-		await db.insert(waitlistSignups).values({ email });
-	} catch (err) {
-		// Postgres unique violation code
-		if (
-			typeof err === "object" &&
-			err !== null &&
-			"code" in err &&
-			err.code === "23505"
-		) {
+		const existing = await db
+			.select({ status: waitlistSignups.status })
+			.from(waitlistSignups)
+			.where(eq(waitlistSignups.email, email))
+			.limit(1);
+
+		if (existing.length > 0 && existing[0]?.status === "active") {
 			return { success: false, error: "already_registered" };
 		}
-		console.error("Waitlist signup error:", err);
+	} catch (err) {
+		console.error("Waitlist lookup error:", err);
 		return { success: false, error: "unknown" };
 	}
 
 	const { error } = await resend.emails.send({
 		from: "Synk <no-reply@waitlist.use-synk.com>",
 		to: [email],
-		subject: "You're on the waitlist!",
+		subject: "Confirm your waitlist signup",
 		react: WaitlistConfirmationEmail({ email }),
 	});
 

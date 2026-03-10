@@ -39,6 +39,8 @@ export const siteConfig = {
 		about: "/about",
 		termsOfService: "/legal/tos",
 		privacyPolicy: "/legal/privacy",
+		imprint: "/legal/imprint",
 		unsubscribe: "/unsubscribe",
+		waitlistConfirm: "/waitlist/confirm",
 	},
 } as const;

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { M } from "node_modules/@upstash/redis/zmscore-DcU8fVDf.mjs";
 import {
 	Collapsible,
 	CollapsibleContent,
@@ -53,7 +52,7 @@ const faqs = [
 		id: "how-can-i-contribute",
 		question: "How can I contribute to Synk?",
 		answer:
-			"While in pre-beta, we are not accepting community contributions. \n\nIf you are interested in becoming a permanent member of the team and contributing to the development from the outset, you can contact us at any time by email at hello@maill.use-synk.com – we look forward to hearing from you.",
+			"While in pre-beta, we are not accepting community contributions. \n\nIf you are interested in becoming a permanent member of the team and contributing to the development from the outset, you can contact us at any time by email at hello@mail.use-synk.com – we look forward to hearing from you.",
 	},
 ];
 

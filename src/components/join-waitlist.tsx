@@ -33,7 +33,7 @@ export function JoinWaitlist({
 			const result = await joinWaitlist(value.email);
 			if (result.success) {
 				setSubmitState("success");
-				toast.success("You're on the list! We'll be in touch soon.");
+				toast.success("Please check your email and confirm your signup.");
 			} else if (result.error === "already_registered") {
 				setSubmitState("already_registered");
 				toast.error("This email is already on the waitlist.");
@@ -95,7 +95,8 @@ export function JoinWaitlist({
 				</form.Subscribe>
 			</FieldGroup>
 			<FieldDescription className="mt-4! max-w-xs text-stone-500 text-xs dark:text-stone-400">
-				By submitting this form, you agree to our{" "}
+				By submitting this form, you consent to receiving waitlist and launch emails
+				as described in our{" "}
 				<Link href={siteConfig.routes.privacyPolicy}>privacy policy</Link> and{" "}
 				<Link href={siteConfig.routes.termsOfService}>terms of service</Link>.
 			</FieldDescription>
