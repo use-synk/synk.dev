@@ -1,6 +1,4 @@
 import { CircleDashed } from "lucide-react";
-import Image from "next/image";
-import AppScreenshot from "public/app-screenshot-2.png";
 import type React from "react";
 import { cn } from "@/lib/utils";
 import { JoinWaitlist } from "../join-waitlist";
@@ -33,7 +31,16 @@ export async function HeroSection({
 				<JoinWaitlist className="mt-12 max-w-md" />
 				<div className="mt-20 rounded-3xl bg-stone-50 p-2 ring-1 ring-stone-700/10 dark:bg-stone-950 dark:ring-stone-50/20">
 					<div className="overflow-hidden rounded-xl shadow-md ring-1 ring-stone-700/10">
-						<Image alt="Synk" src={AppScreenshot} />
+						<video
+							src="https://kyvgtglpffwv6yuf.public.blob.vercel-storage.com/synk-demo-no-bg.mp4"
+							autoPlay
+							muted
+							loop
+							playsInline
+							controls
+							preload="none"
+							className="w-full"
+						/>
 					</div>
 				</div>
 			</div>
