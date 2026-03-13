@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 		description: siteMetadata.description,
 		images: [
 			{
-				url: "/app-screenshot-2.png",
+				url: "/open-graph.jpg",
 				width: 1200,
 				height: 630,
 				alt: siteMetadata.shortDescription,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 		card: siteMetadata.twitter.card,
 		title: siteMetadata.title,
 		description: siteMetadata.description,
-		images: ["/app-screenshot-2.png"],
+		images: ["/open-graph.jpg"],
 	},
 	icons: {
 		icon: [
