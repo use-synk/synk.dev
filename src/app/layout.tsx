@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter } from "next/font/google";
-import { AnalyticsConsent } from "@/components/analytics-consent";
+import Script from "next/script";
 import { Providers } from "@/components/providers";
 import { getBaseUrl, siteMetadata } from "@/lib/config";
 
@@ -92,7 +92,12 @@ export default function RootLayout({
 					{children}
 					<Toaster className="dark" richColors />
 				</Providers>
-				<AnalyticsConsent />
+				<Script
+					defer
+					data-domain="use-synk.com"
+					src="https://plausible.io/js/script.js"
+					strategy="afterInteractive"
+				/>
 			</body>
 		</html>
 	);

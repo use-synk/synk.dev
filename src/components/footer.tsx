@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ResetPrivacySettings } from "@/components/reset-privacy-settings";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
@@ -29,9 +28,6 @@ export function Footer({
 				<p className="mt-6 w-full text-center text-stone-500 text-xs dark:text-stone-400">
 					&copy; {new Date().getFullYear()} Synk. All rights reserved.
 				</p>
-				<div className="mt-3 flex justify-center">
-					<ResetPrivacySettings />
-				</div>
 			</div>
 		</footer>
 	);

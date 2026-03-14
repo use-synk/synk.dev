@@ -24,7 +24,7 @@ This policy explains how personal data is processed when you:
 - confirm your waitlist registration,
 - receive emails from us,
 - use the unsubscribe link,
-- choose whether optional analytics may be used.
+- visit the website (analytics are collected automatically).
 
 ---
 
@@ -35,7 +35,7 @@ Depending on your interaction, we process:
 - **Email address** (when submitted in the waitlist form or used in waitlist email flows).
 - **Technical request data** such as IP address, user agent, and request metadata processed by hosting/infrastructure.
 - **Rate-limiting identifier** derived from request header IP data for abuse prevention.
-- **Analytics/performance telemetry** (if you accept optional analytics), including pseudonymous usage and performance events.
+- **Aggregate analytics data** collected via Plausible Analytics (cookieless, no personal identifiers stored).
 
 ---
 
@@ -49,7 +49,7 @@ Depending on your interaction, we process:
 | Provide unsubscribe and suppression handling | Email address, token data | Art. 6(1)(c) GDPR (legal compliance) and Art. 6(1)(f) GDPR (accountability and proof of consent management) |
 | Ensure security, prevent abuse, and apply rate limiting | IP-derived identifier, request metadata | Art. 6(1)(f) GDPR (legitimate interest in service security and abuse prevention) |
 | Host and technically deliver the website | Technical request data | Art. 6(1)(f) GDPR (reliable service operation) |
-| Optional website analytics and speed telemetry (only if accepted) | Pseudonymous telemetry data | Art. 6(1)(a) GDPR (consent) |
+| Website analytics | Aggregate, cookieless analytics data | Art. 6(1)(f) GDPR (legitimate interest in understanding website usage) |
 
 **Withdrawal of consent:** You can withdraw consent at any time with effect for the future, for example by using the unsubscribe link in emails or by contacting [legal@mail.use-synk.com](mailto:legal@mail.use-synk.com).  
 Withdrawal does not affect processing carried out before withdrawal.
@@ -61,7 +61,7 @@ Withdrawal does not affect processing carried out before withdrawal.
 - **Waitlist email data:** stored until you withdraw consent, request deletion, or the project is permanently discontinued; if a user account is later created, a separate policy applies.
 - **Double opt-in and unsubscribe evidence:** retained as needed to document consent management and legal compliance obligations.
 - **Rate-limiting and security data:** retained for short operational windows and deleted/overwritten according to provider retention settings.
-- **Optional analytics/performance telemetry:** retained according to Vercel Analytics and Speed Insights retention settings.
+- **Analytics data:** retained according to Plausible Analytics retention settings (aggregate, non-personal data).
 
 Where legal retention obligations apply, data may be retained for the required period and blocked for other use.
 
@@ -76,10 +76,15 @@ Neon, Inc., 353 Sacramento St, Suite 1227, San Francisco, CA 94111, USA
 Purpose: storage of waitlist records.  
 Privacy policy: [neon.tech/privacy](https://neon.tech/privacy)
 
-### Vercel (Hosting, Analytics, Speed Insights)
-Vercel Inc., 340 Pine Street, Suite 603, San Francisco, CA 94104, USA  
-Purpose: website hosting and optional analytics/performance telemetry if accepted.  
+### Vercel (Hosting)
+Vercel Inc., 340 Pine Street, Suite 603, San Francisco, CA 94104, USA
+Purpose: website hosting.
 Privacy policy: [vercel.com/legal/privacy-policy](https://vercel.com/legal/privacy-policy)
+
+### Plausible Analytics
+Plausible Insights OÜ, Västriku tn 2, 50403, Tartu, Estonia
+Purpose: optional privacy-friendly website analytics if accepted.
+Privacy policy: [plausible.io/privacy](https://plausible.io/privacy)
 
 ### Resend (Email Delivery)
 Resend Inc., 2261 Market Street #4008, San Francisco, CA 94114, USA  
@@ -101,8 +106,8 @@ If data is processed outside the EEA (in particular in the USA), transfers are b
 
 ## 8. Cookies and Similar Technologies
 
-We use browser storage to persist your analytics preference (accept/decline).  
-Optional analytics/performance telemetry is only activated after your consent choice.
+We use browser storage only to persist functional preferences (e.g., theme).
+We use Plausible Analytics, which is cookieless and stores no personal data on your device.
 
 ---
 
